@@ -343,10 +343,6 @@ class ApiController extends Controller
             return response()->json(['error' => 'Position not found'], 404);
         }
 
-        if (!$position) {
-            return response()->json(['error' => 'Position not found'], 404);
-        }
-
         if ($position->isBooked()) {
             return response()->json(['error' => 'Position already booked'], 422);
         }
