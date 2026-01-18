@@ -111,7 +111,7 @@ export default function Show({ event, instances, bannerUrl }) {
                             {instances.slice(1, 4).map((instance, index) => (
                                 <div key={index} className={`flex justify-between py-2 border-b last:border-0 ${instance.cancelled ? 'opacity-50' : ''}`} style={{ borderColor: 'rgba(0, 0, 0, 0.1)' }}>
                                     <div className="flex items-center gap-2">
-                                        <span className={`${instance.cancelled ? 'line-through' : ''} dark:text-dark-text`}>
+                                        <span className={`${instance.cancelled ? 'line-through' : ''} text-grey-900 dark:text-dark-text`}>
                                             {format(new Date(instance.start), 'PPP')}
                                         </span>
                                         {instance.cancelled && (
