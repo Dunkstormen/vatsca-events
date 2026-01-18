@@ -27,7 +27,10 @@ export default function Show({ event, instances, bannerUrl }) {
                         <div>
                             <h1 className="text-3xl font-bold text-secondary dark:text-primary">{event.title}</h1>
                             {event.recurrence_rule && (
-                                <span className="inline-flex items-center px-2 py-0.5 mt-2 text-xs font-medium bg-secondary text-white border-2 border-secondary">
+                                <span 
+                                    className="inline-flex items-center px-2 py-0.5 mt-2 text-xs font-medium text-white border-2"
+                                    style={{ backgroundColor: 'var(--color-secondary)', borderColor: 'var(--color-secondary)' }}
+                                >
                                     RECURRING EVENT
                                 </span>
                             )}
@@ -85,8 +88,8 @@ export default function Show({ event, instances, bannerUrl }) {
                                     {event.featured_airports.map((airport) => (
                                         <span
                                             key={airport}
-                                            className="inline-flex items-center px-2.5 py-0.5 text-xs font-medium bg-secondary text-white font-mono"
-                                            style={{ boxShadow: 'var(--shadow-card)' }}
+                                            className="inline-flex items-center px-2.5 py-0.5 text-xs font-medium text-white font-mono"
+                                            style={{ backgroundColor: 'var(--color-secondary)', boxShadow: 'var(--shadow-card)' }}
                                         >
                                             {airport}
                                         </span>

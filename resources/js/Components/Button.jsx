@@ -16,7 +16,7 @@ export default function Button({
     
     const variants = {
         primary: 'border-primary text-white bg-primary hover:bg-primary-600 disabled:bg-grey-400 disabled:border-grey-400 disabled:cursor-not-allowed',
-        secondary: 'border-secondary text-white bg-secondary hover:bg-secondary-600 disabled:bg-grey-400 disabled:border-grey-400 disabled:cursor-not-allowed',
+        secondary: 'border-secondary text-white hover:bg-secondary-600 disabled:bg-grey-400 disabled:border-grey-400 disabled:cursor-not-allowed',
         success: 'border-success text-white bg-success hover:bg-success-600 disabled:bg-grey-400 disabled:border-grey-400 disabled:cursor-not-allowed',
         danger: 'border-danger text-white bg-danger hover:bg-danger-600 disabled:bg-grey-400 disabled:border-grey-400 disabled:cursor-not-allowed',
         warning: 'border-warning text-white bg-warning hover:bg-warning-600 disabled:bg-grey-400 disabled:border-grey-400 disabled:cursor-not-allowed',
@@ -29,10 +29,16 @@ export default function Button({
         'outline-light': 'border-white text-white bg-transparent hover:bg-white hover:text-secondary disabled:border-grey-400 disabled:text-grey-400 disabled:cursor-not-allowed',
     };
 
+    // Add inline styles for secondary button to override dark mode CSS
+    const inlineStyles = variant === 'secondary' && !props.disabled ? {
+        backgroundColor: 'var(--color-secondary)',
+    } : {};
+
     return (
         <button
             type={type}
             className={`${baseClasses} ${sizes[size]} ${variants[variant]} ${className}`}
+            style={inlineStyles}
             {...props}
         >
             {children}
