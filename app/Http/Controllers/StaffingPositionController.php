@@ -138,7 +138,7 @@ class StaffingPositionController extends Controller
         // Check if position is booked
         if ($position->isBooked()) {
             // Get booking info before clearing
-            $bookedUser = $position->bookedByUser;
+            $bookedUser = $position->bookedBy;
             
             // Delete booking from Control Center if booking ID exists
             if ($position->control_center_booking_id) {
@@ -215,7 +215,7 @@ class StaffingPositionController extends Controller
 
         // Get booking info before clearing
         $event = $position->staffing->event;
-        $bookedUser = $position->bookedByUser;
+        $bookedUser = $position->bookedBy;
         
         // Delete booking from Control Center if booking ID exists
         if ($position->control_center_booking_id) {
